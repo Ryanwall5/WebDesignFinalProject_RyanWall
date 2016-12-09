@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WedDesign_Final_RyanWall.Models.ToDoList>
+
+
+<link href="@Url.Content("~/Content/RyansStyleSheet.css")" rel="stylesheet" type="text/css" />
+<script src="~/content/todolist.js"></script>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div id="todojumbo" class="jumbotron">
+    <div class="well"><h2 class="text-center" id="tabletitle" style="padding: 40px; background-color: orangered; color: white;">To-Do List</h2></div>
+    <p>
+        @Html.ActionLink("Add Item", "Create", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+
+        <button id="toggle-edit" type="button" class="btn btn-primary btn-lg">Edit</button>
+    </p>
+    <table id="todotable" class="table table-striped">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfDuty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateToFinish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsChecked)
+            </th>
+            <th id="todohead" class="hidden edit-actions">
+                Edit
+            </th>
+
+            <th id="todohead" class="hidden edit-actions">
+                Delete
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUser.Email)
+                    </td>*@
+                <td  id="tdtodo" class="rows" style="text-decoration: @(item.IsChecked ? "line-through" : " ")">
+                    @Html.DisplayFor(modelItem => item.NameOfDuty)
+                </td>
+                <td id="tdtodo" class="rows" style="text-decoration: @(item.IsChecked ? "line-through" : " ")">
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td id="tdtodo" class="rows" style="text-decoration: @(item.IsChecked ? "line-through" : " ")">
+                    @Html.DisplayFor(modelItem => item.DateToFinish)
+                </td>
+                <td id="tdtodo" class="rows" style="text-decoration: @(item.IsChecked ? "line-through" : " ")">
+                    @Html.DisplayFor(modelItem => item.IsChecked)
+                </td>
+                <td class="hidden edit-actions">
+                    @*@Html.ActionLink("Edit Item", "Edit", new { id = item.ToDoListId })*@ 
+
+                    <button id="btnchecked" type="button" class="btn btn-xs btn-success" onclick="location.href='@Url.Action("Edit", "ToDoLists", new { id = item.ToDoListId })'">
+                        <span class="glyphicon glyphicon-pencil"> </span>
+                    </button>
+                    @*@Html.ActionLink("Details", "Details", new { id=item.ShoppingId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.ShoppingId })*@
+                </td>
+                <td class="hidden edit-actions">
+                    <button id="btnchecked" type="button" class="btn btn-xs btn-danger" onclick="location.href='@Url.Action("Delete", "ToDoLists", new { id = item.ToDoListId })'">
+                        <span class="glyphicon glyphicon-remove"> </span>
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+

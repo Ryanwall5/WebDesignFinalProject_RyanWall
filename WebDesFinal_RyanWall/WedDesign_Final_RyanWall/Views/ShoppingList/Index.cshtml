@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WedDesign_Final_RyanWall.Models.ShoppingList>
+<link href="@Url.Content("~/Content/RyansStyleSheet.css")" rel="stylesheet" type="text/css" />
+<script src="~/content/todolist.js"></script>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="shoppingjumbo" class="jumbotron">
+    <div class="well"><h2 class="text-center" id="tabletitle" style="padding: 40px; background-color: orangered; color: white;">Shopping List</h2></div>
+
+    <p>
+        @Html.ActionLink("Add Item", "Create", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+
+        <button id="toggle-edit" type="button" class="btn btn-primary btn-lg">Edit</button>
+    </p>
+
+    <table id="todotable" class="table table-striped">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsItFrozen)
+            </th>
+            <th id="todohead" class="hidden edit-actions">
+                Edit
+            </th>
+
+            <th id="todohead" class="hidden edit-actions">
+                Delete
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUser.Email)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsItFrozen)
+                </td>
+                <td class="hidden edit-actions">
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.ShoppingId })*@ 
+                    <button id="btnchecked" type="button" class="btn btn-xs btn-success" onclick="location.href='@Url.Action("Edit", "ShoppingList", new { id = item.ShoppingId })'">
+                        <span class="glyphicon glyphicon-pencil"> </span>
+                    </button>
+                    @*@Html.ActionLink("Details", "Details", new { id=item.ShoppingId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.ShoppingId })*@
+                </td>
+                <td class="hidden edit-actions">
+                    <button id="btnchecked" type="button" class="btn btn-xs btn-danger" onclick="location.href='@Url.Action("Delete", "ShoppingList", new { id = item.ShoppingId })'">
+                        <span class="glyphicon glyphicon-remove"> </span>
+                    </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

@@ -1,0 +1,50 @@
+﻿
+<link href="@Url.Content("~/Content/RyansStyleSheet.css")" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div id="homejumbo" class="jumbotron">
+
+    <div class="row">
+        <div class="col-md-6">
+            <h1 id="h1hp">Ryan's</h1>
+        </div>
+        <div class="col-md-6">
+            <h1 id="h2hp">Project</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="col1" class="col-md-6">
+            <p id="GetStatsP" class="lead"> Go To About Page</p>
+            <Button id="todoindexbtn" class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("About", "Home")'"> About Page &raquo;</Button>
+        </div>
+
+        <div id="col2" class="col-md-6">
+            <p id="GetStatsP2" class="lead"> Go To Contacts Page</p>
+            <Button id="todoindexbtn" class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Contact", "Home")'"> Contacts Page &raquo;</Button>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Oregon Tech</h2>
+        <p>Go to Oregon Techs Homepage</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Youtube</h2>
+        <p>Go to youtube and watch videos</p>
+        <p><a class="btn btn-default" href="https://www.youtube.com/">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>W3Schools</h2>
+        <p>Go to w3schools to learn more about website design and implementation</p>
+        <p><a class="btn btn-default" href="http://www.w3schools.com/">Learn more &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WedDesign_Final_RyanWall.Models.Person>
+
+<link href="@Url.Content("~/Content/RyansStyleSheet.css")" rel="stylesheet" type="text/css" />
+<script src="~/content/todolist.js"></script>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div id="personjumbo" class="jumbotron">
+    <div class="well"><h2 class="text-center" id="tabletitle" style="padding: 40px; background-color: red; color: white;">People</h2></div>
+
+    <p>
+        @Html.ActionLink("Add Person", "Create", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+
+        <button id="toggle-edit" type="button" class="btn btn-primary btn-lg">Edit</button>
+    </p>
+    <table id="todotable" class="table table-striped">
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NickName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoYouPlayVG)
+            </th>
+            <th id="todohead" class="hidden edit-actions">
+                Edit
+            </th>
+
+            <th id="todohead" class="hidden edit-actions">
+                Delete
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.Email)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NickName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HouseAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoYouPlayVG)
+                </td>
+                <td class="hidden edit-actions">
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.PersonId })*@
+                    <button id="btnchecked" type="button" class="btn btn-xs btn-success" onclick="location.href='@Url.Action("Edit", "Person", new { id = item.PersonId })'">
+                        <span class="glyphicon glyphicon-pencil"> </span>
+                    </button>
+                    @*@Html.ActionLink("Details", "Details", new { id=item.ShoppingId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.ShoppingId })*@
+                </td>
+                <td class="hidden edit-actions">
+                    <button id="btnchecked" type="button" class="btn btn-xs btn-danger" onclick="location.href='@Url.Action("Delete", "Person", new { id = item.PersonId })'">
+                        <span class="glyphicon glyphicon-remove"> </span>
+                    </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

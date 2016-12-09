@@ -1,0 +1,164 @@
+﻿#homejumbo {
+    background-image: url("Home.gif"); 
+    background-position:center; 
+  background-repeat:no-repeat;
+  background-color:black;
+ padding:100px;
+}
+
+
+#linkjumbo{
+     background-color:red;
+   
+}
+
+body{
+    /*background-image:url("NBA2.jpg");*/
+    background-color:darkgrey;
+padding-top:70px;
+}
+
+#h1hp{
+    color: white;
+    text-align:left;
+    font-size:75px;
+}
+#h2hp{
+     color: white;
+    text-align:right;
+    font-size:75px;
+}
+#GetStatsP{
+    color:white;
+    font-size:25px;
+    text-align:left;
+
+}
+#todoindexbtn:hover{
+    box-shadow:10px 10px 5px
+}
+
+#GetStatsP2{
+    color:white;
+    font-size:25px;
+    
+
+}
+
+#statsbtn2:hover{
+    box-shadow:10px 10px 5px
+}
+#col1{
+   text-align:left;
+}
+#col2{
+   text-align:right;
+}
+#bottomtag{
+
+    color:white;
+   font-size:15px;
+   background-color:black;
+}
+#plinksection{
+
+    color:white;
+}
+#h2linksection{
+    color:white;
+}
+#progressjumbo{
+
+    background-color:red;
+}
+
+#progressh2{
+    color:white;
+}
+#blazersprogress{
+   background-color:black;
+}
+
+#todotable{
+    background-color:lightblue;
+
+}
+
+td{
+    font-size:18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*td:nth-child(odd){
+    font-size:16px;   
+   background-color:white;
+   color:black;
+}
+
+td:nth-child(even){
+
+    font-size:16px;  
+   background-color:grey;
+   color:black;
+}*/
+
+
+#btnchecked{
+    /*background-color:black;*/
+
+}
+#todojumbo{
+    background-color:dodgerblue;
+
+}
+#personjumbo{
+     background-color:lightgreen;
+}
+#shoppingjumbo{
+
+    background-color:mediumturquoise;
+}
+/*@media(min-width: 800px){
+    .table-wrapper{
+        padding: 10px 30px 5px;
+        border: 2px solid #ccc;
+        border-radius:5px;
+        box-shadow: #ddd 2px 2px 0px;
+    }
+
+}*/
+th{
+
+    font-size: 1em;
+}
+#toggle-edit:hover{ 
+    box-shadow:10px 10px 5px
+}
+#add-list-item:hover{
+    box-shadow:10px 10px 5px
+}
+#myModalLabel{
+   
+    color:white;
+
+}
+#modaljumbo{
+     background-color:red;
+}
+
+
+.wide{
+    width: 1000px;
+    height: 500px;
+}
+
+
+/*#shopmodalbody{
+    max-height:50px;
+
+}
+#shoppinglist-editor{
+    width:600px;
+    margin-left:-300px;
+    margin-right:-300px;
+
+}*/

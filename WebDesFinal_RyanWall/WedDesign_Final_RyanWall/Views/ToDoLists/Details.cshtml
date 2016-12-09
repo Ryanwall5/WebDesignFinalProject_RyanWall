@@ -1,0 +1,58 @@
+﻿@model WedDesign_Final_RyanWall.Models.ToDoList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ToDoList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfDuty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfDuty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateToFinish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateToFinish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsChecked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsChecked)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ToDoListId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
